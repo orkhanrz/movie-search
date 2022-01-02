@@ -1,11 +1,13 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import Movie from "./Movie";
+import { ModeContext } from "../Context";
 
 const Main = () => {
   const [search, setSearch] = useState("");
   const [movie, setMovie] = useState("");
   const [movies, setMovies] = useState([]);
   const input = useRef("");
+  const darkMode = useContext(ModeContext);
 
   const findMovie = (e) => {
     e.preventDefault();
@@ -24,11 +26,11 @@ const Main = () => {
   }, [movie]);
 
   return (
-    <main>
+    <main className={`${darkMode && "dark"}`}>
       <form onSubmit={findMovie}>
         <input
           type="text"
-          className="search-input"
+          className={`search-input ${darkMode && "dark"}`}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           ref={input}

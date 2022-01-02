@@ -16,16 +16,21 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+main {
+  min-height: 100vh;
+}
+
 main,
 header {
   padding: 0.5em calc(1em + 6vw);
 }
 
-main {
-  margin-top: 1em;
+.dark {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
 }
-/* Header Styles */
 
+/* Header Styles */
 header {
   box-shadow: 0px 4px 10px #e5e5e5;
   display: flex;
@@ -36,6 +41,10 @@ header {
 .header-logo {
   font-family: "Pacifico", cursive;
   font-size: calc(2rem + 0.5vw);
+}
+
+.dark .header-logo {
+  color: white;
 }
 
 .header-logo > span {
@@ -49,6 +58,11 @@ header {
   border-radius: 25px;
 }
 
+.toggle.dark {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid white;
+}
+
 .toggler {
   width: 1.27em;
   height: 1.27em;
@@ -57,23 +71,18 @@ header {
   margin-top: 1px;
   margin-left: 1px;
   cursor: pointer;
-  transition: all 0.25s ease-in-out;
-}
-
-.toggle.dark {
-  border: 1px solid black;
+  transition: all 350ms ease-in-out;
 }
 
 .toggle.dark > .toggler {
   margin-left: 16px;
-  background-color: black;
+  background-color: white;
 }
 
 /* Form Styles */
-
 form {
   display: flex;
-  margin-bottom: 2em;
+  margin-block: 1em 2em;
 }
 
 form .search-input,
@@ -92,6 +101,10 @@ form .search-input {
   background-color: rgba(240, 240, 240, 0.5);
 }
 
+form .search-input.dark {
+  background-color: white;
+}
+
 form .search-btn {
   text-transform: uppercase;
   font-weight: 500;
@@ -106,7 +119,6 @@ form .search-btn:focus {
 }
 
 /* Movie Card Styles */
-
 .movie {
   display: flex;
   margin-bottom: 1em;
