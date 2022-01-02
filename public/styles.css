@@ -22,7 +22,7 @@ main {
 
 main,
 header {
-  padding: 0.5em calc(1em + 6vw);
+  padding: 0.5em 3em;
 }
 
 .dark {
@@ -162,6 +162,11 @@ form .search-btn:focus {
 }
 
 @media (max-width: 500px) {
+  main,
+  header {
+    padding-inline: 1em;
+  }
+
   .movie {
     flex-direction: column;
   }
